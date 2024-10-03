@@ -6,10 +6,6 @@ separating each incoming ingredient with "and".
 
 Look below to see how this function is invoked:
 
-let sandwich = sandwichMaker(); // => returns a function
-sandwich("spinach") // => "One sandwich with tomato and spinach"
-sandwich("jelly") // => "One sandwich with tomato and spinach and jelly"
-sandwich("bread") // => "One sandwich with tomato and spinach and jelly and bread"
 
 Another Sandwich:
 let sandwich2 = sandwichMaker(); // => returns a function
@@ -17,7 +13,20 @@ sandwich2("pb") // => "One sandwich with tomato and pb"
 
 ***********************************************************************/
 
-// Your code here 
+function sandwichMaker(){
+let sentence = "One sandwich with tomato"
+
+return function(ingredient){
+  sentence +=  " and " + ingredient
+  return sentence
+}
+}
+
+
+let sandwich = sandwichMaker(); // => returns a function
+console.log(sandwich("spinach")) // => "One sandwich with tomato and spinach"
+console.log(sandwich("jelly")) // => "One sandwich with tomato and spinach and jelly"
+console.log(sandwich("bread")) // => "One sandwich with tomato and spinach and jelly and bread"
 
 /**************DO NOT MODIFY ANYTHING UNDER THIS  LINE*****************/
 
